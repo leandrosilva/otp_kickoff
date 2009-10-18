@@ -6,7 +6,6 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "otp-kickoff"
     gem.summary = %Q{Simple generator to kick off Erlang/OTP projects}
-    gem.description = %Q{TODO: longer description of your gem}
     gem.email = "leandrodoze@gmail.com"
     gem.homepage = "http://github.com/leandrosilva/otp-kickoff"
     gem.authors = ["Leandro Silva"]
