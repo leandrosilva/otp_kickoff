@@ -12,7 +12,7 @@ class OTPKickOff < Thor::Group
   #
   
   def self.source_root
-    File.expand_path('.')
+    File.expand_path(File.dirname(__FILE__) + '/..')
   end
   
   def self.destination_root
