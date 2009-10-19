@@ -1,10 +1,10 @@
 %%
 %% Supervised worker process module
 %%
-%% File: template_server.erl
+%% File: <%=application_name%>_server.erl
 %%
 
--module(template_server).
+-module(<%=application_name%>_server).
 -behaviour(gen_server).
  
 -export([start_link/0]).
