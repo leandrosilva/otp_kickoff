@@ -10,7 +10,7 @@ Add Github as a source for your RubyGem:
 
 Make install:
 
-  sudo gem install leandrosilva-sparrow
+  sudo gem install leandrosilva-otp-kickoff
 
 == Usage
 
