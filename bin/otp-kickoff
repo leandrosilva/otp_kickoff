@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
-require File.expand_path(File.dirname(__FILE__) + '/../otp-kickoff')
+require File.expand_path(File.dirname(__FILE__) + '/../lib/otp-kickoff')
+
+OTPKickOff.start

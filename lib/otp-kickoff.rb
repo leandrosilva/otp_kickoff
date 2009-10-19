@@ -1,4 +1,5 @@
-require 'erb'
+require 'rubygems'
+require 'thor'
 
 class OTPKickOff < Thor::Group
   include Thor::Actions

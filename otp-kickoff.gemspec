@@ -26,8 +26,6 @@ Gem::Specification.new do |s|
      "VERSION",
      "bin/otp-kickoff",
      "lib/otp-kickoff.rb",
-     "otp-kickoff.gemspec",
-     "otp-kickoff.rb",
      "resources/template_app.app",
      "resources/template_app.erl",
      "resources/template_appstart.erl",
