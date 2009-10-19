@@ -1,14 +1,24 @@
 %%
 %% Application module
 %%
-%% File: <%=application_name%>_app.erl
+%% File   : <%=application_name%>_handler.erl
+%% Created: <%=Date.today%>
+%%
+%% @author <%=author_name%> <<%=author_email%>>
+%% @copyright <%=today.year%> <%=author_name%>
+%%
+%% @doc TODO make nice description
 %%
 
 -module(<%=application_name%>_app).
+-author('<%=author_name%>')
+
 -behaviour(application).
  
 -export([start/2, stop/1]).
- 
+
+%% @spec start(_Type, _StartArgs)  -> {ok, Pid}
+%% @doc Application start callback <%=application_name%>
 start(_Type, _StartArgs) ->
    case <%=application_name%>_sup:start_link() of
       {ok, Pid} ->
@@ -18,7 +28,9 @@ start(_Type, _StartArgs) ->
           alarm_handler:set_alarm({{application_stopped, ?MODULE}, []}),
           Error
    end.
- 
+
+%% @spec stop(_State) -> ok
+%% @doc Application stop callback for <%=application_name%>
 stop(_State) ->
    alarm_handler:set_alarm({{application_stopped, ?MODULE}, []}),
    ok.
