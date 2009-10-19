@@ -1,17 +1,39 @@
 = otp-kickoff
 
-Description goes here.
+Simple generator to kick off Erlang/OTP projects.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but
-   bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+== Install
+
+Add Github as a source for your RubyGem:
+
+  gem sources -a http://gems.github.com
+
+Make install:
+
+  sudo gem install leandrosilva-sparrow
+
+== Usage
+
+Type:
+
+  otp-kickoff amazingapp leandro leandrodoze@gmail.com
+
+That will generate:
+
+  create  amazingapp/src
+  create  amazingapp/ebin
+  create  amazingapp/deps
+  create  amazingapp/src/amazingapp_app.app
+  create  amazingapp/src/amazingapp_app.erl
+  create  amazingapp/src/amazingapp_sup.erl
+  create  amazingapp/src/amazingapp_server.erl
+  create  amazingapp/src/amazingapp_handler.erl
+  create  amazingapp/src/amazingapp.erl
+  create  amazingapp/src/amazingapp.hrl
+
+== Next
+
+Enjoy a lot with Erlang/OTP programming!
 
 == Copyright
 
