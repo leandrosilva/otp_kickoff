@@ -2,16 +2,6 @@
 
 Simple generator to kick off Erlang/OTP projects.
 
-== Install
-
-Add Github as a source for your RubyGem:
-
-  gem sources -a http://gems.github.com
-
-Make install:
-
-  sudo gem install leandrosilva-otp-kickoff
-
 == Usage
 
 Type:
