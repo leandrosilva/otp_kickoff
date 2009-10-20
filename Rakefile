@@ -4,13 +4,13 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "otp-kickoff"
+    gem.name = "otp_kickoff"
     gem.summary = %Q{Simple generator to kick off Erlang/OTP projects}
     gem.email = "leandrodoze@gmail.com"
-    gem.homepage = "http://github.com/leandrosilva/otp-kickoff"
+    gem.homepage = "http://github.com/leandrosilva/otp_kickoff"
     gem.authors = ["Leandro Silva"]
     gem.add_development_dependency "rspec"
-    gem.add_dependency "wycats-thor"
+    gem.add_dependency "thor"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError
@@ -42,7 +42,7 @@ Rake::RDocTask.new do |rdoc|
   end
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "otp-kickoff #{version}"
+  rdoc.title = "otp_kickoff #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

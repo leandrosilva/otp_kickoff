@@ -32,6 +32,7 @@ class OTPKickOff < Thor::Group
     empty_directory "#{application_name}/src"
     empty_directory "#{application_name}/ebin"
     empty_directory "#{application_name}/deps"
+    empty_directory "#{application_name}/priv"
   end
   
   def create_source_files

@@ -11,7 +11,7 @@
 %%
 
 -module(<%=application_name%>_sup).
--author('<%=author_name%>')
+-author('<%=author_name%> <<%=author_email%>>').
 
 -behaviour(supervisor).
 

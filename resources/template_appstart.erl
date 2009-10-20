@@ -11,7 +11,7 @@
 %%
 
 -module(<%=application_name%>).
--author('<%=author_name%>')
+-author('<%=author_name%> <<%=author_email%>>').
 
 -export ([start/0, stop/0]).
 

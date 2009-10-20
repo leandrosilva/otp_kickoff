@@ -1,17 +1,17 @@
 %%
 %% Supervised worker process module
 %%
-%% File   : <%=application_name%>_handler.erl
-%% Created: <%=Date.today%>
+%% File   : test_handler.erl
+%% Created: 2009-10-19
 %%
-%% @author <%=author_name%> <<%=author_email%>>
-%% @copyright <%=today.year%> <%=author_name%>
+%% @author leandro <leandrodoze@gmail.com>
+%% @copyright 2009 leandro
 %%
 %% @doc TODO make nice description
 %%
 
--module(<%=application_name%>_server).
--author('<%=author_name%> <<%=author_email%>>').
+-module(test_server).
+-author('leandro <leandrodoze@gmail.com>')
 
 -behaviour(gen_server).
  
@@ -27,12 +27,12 @@
 %%
 
 %% @spec start_link() -> ServerReturn
-%% @doc Start the server for <%=application_name%>
+%% @doc Start the server for test
 start_link() ->
    gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
  
 %% @spec stop() -> ServerReturn
-%% @doc Stopt the server for <%=application_name%>
+%% @doc Stopt the server for test
 stop() ->
 	gen_server:cast(?MODULE, stop).
 

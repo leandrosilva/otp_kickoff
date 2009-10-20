@@ -1,17 +1,17 @@
 %%
 %% Handler module that can be used by server to catch and handle events
 %%
-%% File   : <%=application_name%>_handler.erl
-%% Created: <%=Date.today%>
+%% File   : test_handler.erl
+%% Created: 2009-10-19
 %%
-%% @author <%=author_name%> <<%=author_email%>>
-%% @copyright <%=today.year%> <%=author_name%>
+%% @author leandro <leandrodoze@gmail.com>
+%% @copyright 2009 leandro
 %%
 %% @doc TODO make nice description
 %%
 
--module(<%=application_name%>_handler).
--author('<%=author_name%> <<%=author_email%>>').
+-module(test_handler).
+-author('leandro <leandrodoze@gmail.com>')
 
 -export([init/1, terminate/1, handle_event/2]).
 

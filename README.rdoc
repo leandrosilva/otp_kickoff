@@ -1,4 +1,4 @@
-= otp-kickoff
+= otp_kickoff
 
 Simple generator to kick off Erlang/OTP projects.
 
