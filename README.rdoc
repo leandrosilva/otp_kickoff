@@ -2,11 +2,27 @@
 
 Simple generator to kick off Erlang/OTP projects.
 
+== Install and configuration
+
+Install the gemcutter (a awesome gem hosting) support:
+
+  sudo gem install gemcutter
+
+More about gemcutter here http://gemcutter.org.
+
+Next, install the otp_kickoff:
+
+  sudo gem install otp_kickoff
+
+Finally, configure your preferences:
+
+  otp_kickoff configure --name=leandro --email=leandrodoze@gmail.com
+
 == Usage
 
 Type:
 
-  otp_kickoff amazingapp leandro leandrodoze@gmail.com
+  otp_kickoff new_application --name=amazingapp
 
 That will generate:
 
