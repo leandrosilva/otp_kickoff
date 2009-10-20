@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{otp_kickoff}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Leandro Silva"]
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
      "VERSION",
      "bin/otp_kickoff",
      "lib/otp_kickoff.rb",
+     "otp_kickoff.gemspec",
      "resources/template_app.app",
      "resources/template_app.erl",
      "resources/template_appstart.erl",
