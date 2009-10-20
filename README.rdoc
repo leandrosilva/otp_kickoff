@@ -6,7 +6,7 @@ Simple generator to kick off Erlang/OTP projects.
 
 Type:
 
-  otp-kickoff amazingapp leandro leandrodoze@gmail.com
+  otp_kickoff amazingapp leandro leandrodoze@gmail.com
 
 That will generate:
 
