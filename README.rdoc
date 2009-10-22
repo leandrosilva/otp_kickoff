@@ -4,21 +4,11 @@ Simple generator to kick off Erlang/OTP projects quickly.
 
 == Install and configuration
 
-1) Install the gemcutter (a awesome gem hosting) support:
+Install the otp_kickoff gem:
 
-  sudo gem install gemcutter
+  sudo gem install otp_kickoff -s http://gemcutter.org
 
-And set that as a primary RubyGem source:
-
-  gem tumble
-
-More about gemcutter on http://gemcutter.org.
-
-2) Next, install the otp_kickoff:
-
-  sudo gem install otp_kickoff
-
-3) Finally, configure your preferences:
+And finally, configure your preferences:
 
   otp_kickoff configure --name=leandro --email=leandrodoze@gmail.com
 
