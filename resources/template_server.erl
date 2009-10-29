@@ -26,12 +26,12 @@
 %% Operation & Maintenance API
 %%
 
-%% @spec start_link() -> ServerReturn
+%% @spec start_link() -> {ok, Pid}
 %% @doc Start the server for <%=application_name%>
 start_link() ->
    gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
  
-%% @spec stop() -> ServerReturn
+%% @spec stop() -> ok
 %% @doc Stopt the server for <%=application_name%>
 stop() ->
 	gen_server:cast(?MODULE, stop).

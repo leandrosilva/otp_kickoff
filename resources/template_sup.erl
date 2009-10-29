@@ -27,7 +27,7 @@
 %% Operation & Maintenance API
 %%
 
-%% @spec start_link() -> SupervisorReturn
+%% @spec start_link() -> {ok, Pid}
 %% @doc Start the supervisor for <%=application_name%>
 start_link() ->
    supervisor:start_link({local, ?SERVER}, ?MODULE, []).
@@ -36,12 +36,12 @@ start_link() ->
 %% Supervisor callback function
 %%
  
-%% @spec init([]) -> SupervisorSpec
+%% @spec init([]) -> {ok, {{RestartStrategy, MaxRestart, MaxTime}, [ChildSpec]}}
 %% @doc Callback for initialize the supervisor for <%=application_name%>
 init([]) ->
    %% <%=application_name%>_server is a supervisioned child process
    Server = {<%=application_name%>_server_child,
-              {<%=application_name%>_server, start_link, []},permanent, 2000, worker, [<%=application_name%>_server]},
+              {<%=application_name%>_server, start_link, []}, permanent, 2000, worker, [<%=application_name%>_server]},
               
    %% Restart strategies for childs
    {ok, {{one_for_one, 10, 1}, [Server]}}.
