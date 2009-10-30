@@ -34,7 +34,8 @@ class OTPKickOff < Thor
   # task: configure
   
   desc 'configure --author=AUTHOR --email=AUTHOR_EMAIL', 'configure informations about author'
-  method_options :author => :string, :email => :string
+  method_option :author, :type => :string, :required => true
+  method_option :email,  :type => :string, :required => true
   
   def configure
     #set data about author
@@ -52,7 +53,7 @@ author_email: #{author_email}
   # task: new_application
   
   desc 'new_application --name=APPLICATION_NAME', 'generate a new Erlang/OTP application stub'
-  method_options :name => :string
+  method_option :name, :type => :string, :required => true, :aliases => "-n"
   
   def new_application
     # set data to templates
@@ -69,10 +70,9 @@ author_email: #{author_email}
     template 'resources/template_app.erl',      "#{application_name}/src/#{application_name}_app.erl"
     template 'resources/template_sup.erl',      "#{application_name}/src/#{application_name}_sup.erl"
     template 'resources/template_server.erl',   "#{application_name}/src/#{application_name}_server.erl"
-    template 'resources/template_handler.erl',  "#{application_name}/src/#{application_name}_handler.erl"
     template 'resources/template_appstart.erl', "#{application_name}/src/#{application_name}.erl"
     template 'resources/template_include.hrl',  "#{application_name}/src/#{application_name}.hrl"
-
+    
     # create required directories
     empty_directory "#{application_name}/ebin"
     empty_directory "#{application_name}/deps"
