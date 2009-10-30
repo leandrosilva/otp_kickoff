@@ -30,11 +30,6 @@
 %% @doc Start the server for <%=application_name%>
 start_link() ->
    gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
- 
-%% @spec stop() -> ok
-%% @doc Stopt the server for <%=application_name%>
-stop() ->
-	gen_server:cast(?MODULE, stop).
 
 %%
 %% Genserver callback functions
@@ -62,7 +57,7 @@ handle_cast(_Msg, State) ->
    {noreply, State}.
  
 %% @spec handle_info(_Info, State) -> {noreply, State}
-%% @doc Callback for give informations about server
+%% @doc Callback for timeout or other unreconized messages
 handle_info(_Info, State) ->
    {noreply, State}.
  
