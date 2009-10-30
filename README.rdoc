@@ -35,6 +35,18 @@ That will generate:
 
 Enjoy a lot with Erlang/OTP programming!
 
+== Help
+
+If you need some help, type:
+
+  otp_kickoff help
+
+For a specific command:
+  
+  otp_kickoff help new_application
+  
+And so on...
+
 == Copyright
 
 Copyright (c) 2009 Leandro Silva. See LICENSE for details.
