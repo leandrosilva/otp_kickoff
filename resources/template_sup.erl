@@ -40,8 +40,8 @@ start_link() ->
 %% @doc Callback for initialize the supervisor for <%=application_name%>
 init([]) ->
    %% <%=application_name%>_server is a supervisioned child process
-   Server = {<%=application_name%>_server_child,
-              {<%=application_name%>_server, start_link, []}, permanent, 2000, worker, [<%=application_name%>_server]},
+   Server = {<%=application_name%>_server,
+              {<%=application_name%>_server, start_link, []}, permanent, brutal_kill, worker, [<%=application_name%>_server]},
               
    %% Restart strategies for childs
    {ok, {{one_for_one, 10, 1}, [Server]}}.
