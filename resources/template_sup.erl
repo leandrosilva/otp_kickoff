@@ -28,7 +28,7 @@
 %%
 
 %% @spec start_link() -> {ok, Pid}
-%% @doc Start the <%=supervisor_name%>_sup for <%=application_name%>
+%% @doc Start the <%=supervisor_name%>_sup for <%=application_name%> application
 start_link() ->
    supervisor:start_link({local, ?SERVER}, ?MODULE, []).
 
@@ -37,7 +37,7 @@ start_link() ->
 %%
  
 %% @spec init([]) -> {ok, {{RestartStrategy, MaxRestart, MaxTime}, [ChildSpec]}}
-%% @doc Callback for initialize the <%=supervisor_name%>_sup for <%=application_name%>
+%% @doc Callback for initialize the <%=supervisor_name%>_sup for <%=application_name%> application
 init([]) ->
    %% <%=application_name%>_server is a supervisioned child process
    Server = {<%=application_name%>_server,
