@@ -30,7 +30,7 @@ class OTPKickOff < Thor
   # Tasks
   #
 
-  no_tasks { attr_accessor :application_name, :author_name, :author_email, :today }
+  no_tasks { attr_accessor :application_name, :author_name, :author_email }
   
   # task: configure
   
@@ -61,9 +61,7 @@ author_email: #{author_email}
     @application_name = options[:name]
     
     @author_name, @author_email = get_config_info
-    
-    @today = Date.today
-    
+        
     # generate templates
     template 'resources/template.app',          "#{application_name}/src/#{application_name}.app"
     template 'resources/template_app.erl',      "#{application_name}/src/#{application_name}_app.erl"
@@ -88,8 +86,6 @@ author_email: #{author_email}
     @application_name = options[:name]
     
     @author_name, @author_email = get_config_info
-    
-    @today = Date.today
     
     # generate templates
     template 'resources/template_server.erl', "#{application_name}_server.erl"
