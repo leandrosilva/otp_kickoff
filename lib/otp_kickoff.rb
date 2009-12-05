@@ -30,7 +30,9 @@ class OTPKickOff < Thor
   # Tasks
   #
 
-  no_tasks { attr_accessor :application_name, :author_name, :author_email }
+  no_tasks { attr_accessor :author_name, :author_email }
+
+  no_tasks { attr_accessor :application_name, :handler_name }
   
   # task: configure
   
@@ -89,6 +91,21 @@ author_email: #{author_email}
     
     # generate templates
     template 'resources/template_server.erl', "#{application_name}_server.erl"
+  end
+  
+  # task: new_gen_server
+  
+  desc 'new_event_handler', 'generate a new Erlang/OTP gen_event handler stub'
+  method_option :name, :type => :string, :required => true, :aliases => "-n"
+  
+  def new_event_handler
+    # set data to templates
+    @handler_name = options[:name]
+    
+    @author_name, @author_email = get_config_info
+    
+    # generate templates
+    template 'resources/template_handler.erl', "#{handler_name}_handler.erl"
   end
   
   private
