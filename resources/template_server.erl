@@ -1,7 +1,7 @@
 %%
 %% Supervised worker process module
 %%
-%% File   : <%=application_name%>_server.erl
+%% File   : <%=server_name%>_server.erl
 %% Created: <%=TODAY%>
 %%
 %% @author <%=author_name%> <<%=author_email%>>
@@ -10,7 +10,7 @@
 %% @doc TODO make nice description
 %%
 
--module(<%=application_name%>_server).
+-module(<%=server_name%>_server).
 -author('<%=author_name%> <<%=author_email%>>').
 
 -behaviour(gen_server).
@@ -27,7 +27,7 @@
 %%
 
 %% @spec start_link() -> {ok, Pid}
-%% @doc Start the server for <%=application_name%>
+%% @doc Start the <%=server_name%>_server
 start_link() ->
    gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
 
@@ -36,7 +36,7 @@ start_link() ->
 %%
 
 %% @spec init(State) -> {ok, State}
-%% @doc Callback for initialize the server
+%% @doc Callback for initialize the <%=server_name%>_server
 init(State) ->
   {ok, State}.
  

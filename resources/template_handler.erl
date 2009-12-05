@@ -18,7 +18,7 @@
 -export([init/1, terminate/1, handle_event/2, handle_call/2, handle_info/2, code_change/3]).
 
 %% @spec init(State) -> State
-%% @doc Callback for initialize the <%=handler_name%> handler
+%% @doc Callback for initialize the <%=handler_name%>_handler
 init(State) ->
 	{ok, State}.
 

@@ -1,7 +1,7 @@
 %%
 %% Supervisor module
 %%
-%% File   : <%=application_name%>_sup.erl
+%% File   : <%=supervisor_name%>_sup.erl
 %% Created: <%=TODAY%>
 %%
 %% @author <%=author_name%> <<%=author_email%>>
@@ -10,7 +10,7 @@
 %% @doc TODO make nice description
 %%
 
--module(<%=application_name%>_sup).
+-module(<%=supervisor_name%>_sup).
 -author('<%=author_name%> <<%=author_email%>>').
 
 -behaviour(supervisor).
@@ -28,7 +28,7 @@
 %%
 
 %% @spec start_link() -> {ok, Pid}
-%% @doc Start the supervisor for <%=application_name%>
+%% @doc Start the <%=supervisor_name%>_sup for <%=application_name%>
 start_link() ->
    supervisor:start_link({local, ?SERVER}, ?MODULE, []).
 
@@ -37,7 +37,7 @@ start_link() ->
 %%
  
 %% @spec init([]) -> {ok, {{RestartStrategy, MaxRestart, MaxTime}, [ChildSpec]}}
-%% @doc Callback for initialize the supervisor for <%=application_name%>
+%% @doc Callback for initialize the <%=supervisor_name%>_sup for <%=application_name%>
 init([]) ->
    %% <%=application_name%>_server is a supervisioned child process
    Server = {<%=application_name%>_server,
