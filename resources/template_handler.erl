@@ -2,10 +2,10 @@
 %% Handler module used by event manager to deal with events
 %%
 %% File   : <%=handler_name%>_handler.erl
-%% Created: <%=Date.today%>
+%% Created: <%=TODAY%>
 %%
 %% @author <%=author_name%> <<%=author_email%>>
-%% @copyright <%=today.year%> <%=author_name%>
+%% @copyright <%=TODAY.year%> <%=author_name%>
 %%
 %% @doc TODO make nice description
 %%

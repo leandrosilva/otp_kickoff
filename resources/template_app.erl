@@ -1,11 +1,11 @@
 %%
 %% Application module
 %%
-%% File   : <%=application_name%>_handler.erl
-%% Created: <%=Date.today%>
+%% File   : <%=application_name%>_app.erl
+%% Created: <%=TODAY%>
 %%
 %% @author <%=author_name%> <<%=author_email%>>
-%% @copyright <%=today.year%> <%=author_name%>
+%% @copyright <%=TODAY.year%> <%=author_name%>
 %%
 %% @doc TODO make nice description
 %%

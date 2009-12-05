@@ -6,6 +6,7 @@ require 'yaml'
 # Path to configuration file
 #
 CONFIGURATION_FILE = '~/.otp_kickoff'
+TODAY              = Date.today
 
 #
 # Thor classes, the magic of tasks!
@@ -59,14 +60,12 @@ author_email: #{author_email}
     # set data to templates
     @application_name = options[:name]
     
-    config_info   = ConfigInfo.new
-    @author_name  = config_info.author_name
-    @author_email = config_info.author_email
+    @author_name, @author_email = get_config_info
     
     @today = Date.today
     
     # generate templates
-    template 'resources/template_app.app',      "#{application_name}/src/#{application_name}_app.app"
+    template 'resources/template.app',          "#{application_name}/src/#{application_name}.app"
     template 'resources/template_app.erl',      "#{application_name}/src/#{application_name}_app.erl"
     template 'resources/template_sup.erl',      "#{application_name}/src/#{application_name}_sup.erl"
     template 'resources/template_server.erl',   "#{application_name}/src/#{application_name}_server.erl"
@@ -88,15 +87,21 @@ author_email: #{author_email}
     # set data to templates
     @application_name = options[:name]
     
-    config_info   = ConfigInfo.new
-    @author_name  = config_info.author_name
-    @author_email = config_info.author_email
+    @author_name, @author_email = get_config_info
     
     @today = Date.today
     
     # generate templates
-    template 'resources/template_server.erl',   "#{application_name}_server.erl"
+    template 'resources/template_server.erl', "#{application_name}_server.erl"
   end
+  
+  private
+  
+    def get_config_info
+      config_info = ConfigInfo.new
+      
+      return config_info.author_name, config_info.author_email
+    end
 end
 
 #
