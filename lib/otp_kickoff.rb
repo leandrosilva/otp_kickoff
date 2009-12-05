@@ -32,7 +32,7 @@ class OTPKickOff < Thor
 
   no_tasks { attr_accessor :author_name, :author_email }
 
-  no_tasks { attr_accessor :application_name, :handler_name }
+  no_tasks { attr_accessor :application_name, :supervisor_name, :server_name, :handler_name }
   
   # task: configure
   
@@ -61,6 +61,8 @@ author_email: #{author_email}
   def new_application
     # set data to templates
     @application_name = options[:name]
+    @supervisor_name  = @application_name
+    @server_name      = @application_name
     
     @author_name, @author_email = get_config_info
         
@@ -78,6 +80,23 @@ author_email: #{author_email}
     empty_directory "#{application_name}/priv"
   end
   
+  # task: new_supervisor
+  
+  desc 'new_supervisor', 'generate a new Erlang/OTP supervisor stub'
+  method_option :name, :type => :string, :required => true, :aliases => "-n"
+  method_option :application_name, :type => :string, :required => true, :aliases => "-a"
+  
+  def new_supervisor
+    # set data to templates
+    @supervisor_name  = options[:name]
+    @application_name = options[:application_name]
+    
+    @author_name, @author_email = get_config_info
+    
+    # generate templates
+    template 'resources/template_sup.erl', "#{supervisor_name}_sup.erl"
+  end
+  
   # task: new_gen_server
   
   desc 'new_gen_server', 'generate a new Erlang/OTP gen_server stub'
@@ -85,12 +104,12 @@ author_email: #{author_email}
   
   def new_gen_server
     # set data to templates
-    @application_name = options[:name]
+    @server_name = options[:name]
     
     @author_name, @author_email = get_config_info
     
     # generate templates
-    template 'resources/template_server.erl', "#{application_name}_server.erl"
+    template 'resources/template_server.erl', "#{server_name}_server.erl"
   end
   
   # task: new_gen_server
