@@ -10,7 +10,7 @@ Install the otp_kickoff gem:
 
 And finally, configure your preferences:
 
-  otp_kickoff configure --name=leandro --email=leandrodoze@gmail.com
+  otp_kickoff configure --author=leandro --email=leandrodoze@gmail.com
 
 == Usage
 
