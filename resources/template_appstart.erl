@@ -23,4 +23,4 @@ start() ->
 %% @spec stop() -> ok
 %% @doc Stop the <%=application_name%> application
 stop() ->
-	application:stop(%=application_name%>).
+	application:stop(<%=application_name%>).
