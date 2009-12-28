@@ -2,7 +2,7 @@
 
 Simple generator to kick off Erlang/OTP projects quickly.
 
-Pleasant news: Now otp_kickoff also installs the gem ebuilder, a very simple tool for building Erlang/OTP projects. It is all about facilitate our life. For more informations about ebuilder, see: http://github.com/leandrosilva/ebuilder.
+2009/12/29 - Pleasant news: Now otp_kickoff also installs the gem ebuilder, a very simple tool for building Erlang/OTP projects. It is all about facilitate our life. For more informations about ebuilder, see: http://github.com/leandrosilva/ebuilder.
 
 == Install and configuration
 
