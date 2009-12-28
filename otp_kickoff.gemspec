@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{otp_kickoff}
-  s.version = "0.0.7"
+  s.version = "0.0.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Leandro Silva"]
-  s.date = %q{2009-12-27}
+  s.date = %q{2009-12-28}
   s.default_executable = %q{otp_kickoff}
   s.email = %q{leandrodoze@gmail.com}
   s.executables = ["otp_kickoff"]
@@ -34,6 +34,7 @@ Gem::Specification.new do |s|
      "resources/template_include.hrl",
      "resources/template_server.erl",
      "resources/template_sup.erl",
+     "resources/template_test.erl",
      "spec/otp-kickoff_spec.rb",
      "spec/spec_helper.rb"
   ]
