@@ -32,7 +32,7 @@ class OTPKickOff < Thor
 
   no_tasks { attr_accessor :author_name, :author_email }
 
-  no_tasks { attr_accessor :application_name, :supervisor_name, :server_name, :handler_name }
+  no_tasks { attr_accessor :application_name, :supervisor_name, :server_name, :handler_name, :test_name }
   
   # task: configure
   
@@ -63,6 +63,7 @@ author_email: #{author_email}
     @application_name = options[:name]
     @supervisor_name  = @application_name
     @server_name      = @application_name
+    @test_name        = @application_name
     
     @author_name, @author_email = get_config_info
         
@@ -73,6 +74,7 @@ author_email: #{author_email}
     template 'resources/template_server.erl',   "#{application_name}/src/#{application_name}_server.erl"
     template 'resources/template_appstart.erl', "#{application_name}/src/#{application_name}.erl"
     template 'resources/template_include.hrl',  "#{application_name}/src/#{application_name}.hrl"
+    template 'resources/template_test.erl',     "#{application_name}/test/#{application_name}_test.erl"
     
     # create required directories
     empty_directory "#{application_name}/ebin"
@@ -112,7 +114,7 @@ author_email: #{author_email}
     template 'resources/template_server.erl', "#{server_name}_server.erl"
   end
   
-  # task: new_gen_server
+  # task: new_event_handler
   
   desc 'new_event_handler', 'generate a new Erlang/OTP gen_event handler stub'
   method_option :name, :type => :string, :required => true, :aliases => "-n"
@@ -125,6 +127,21 @@ author_email: #{author_email}
     
     # generate templates
     template 'resources/template_handler.erl', "#{handler_name}_handler.erl"
+  end
+  
+  # task: new_test
+  
+  desc 'new_test', 'generate a new Erlang/OTP test stub'
+  method_option :name, :type => :string, :required => true, :aliases => "-n"
+  
+  def new_test
+    # set data to templates
+    @test_name = options[:name]
+    
+    @author_name, @author_email = get_config_info
+    
+    # generate templates
+    template 'resources/template_test.erl', "#{test_name}_test.erl"
   end
   
   private
